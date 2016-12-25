@@ -15,7 +15,6 @@ public class Db extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "Db.db";
     private static Db dbHelper = null;
 
-    private static UserManager userManager;
     private static ScheduleManager scheduleManager;
 
     public Db(Context context) {
