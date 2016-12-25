@@ -97,4 +97,14 @@
     <string name="vibration_intensity_title">Vibration intensity</string>
     <string name="vibration_intensity_summary">The intensity of vibration during feeding for smooth flow of food</string>
     <string name="max_penging_schedules">Maximum number of pending schedules</string>
+    <string name="feeding_time">Feeding time</string>
+    <string name="title">Title</string>
+    <string name="title_hint">Schedule name</string>
+    <string name="create_schedule">Create Schedule</string>
+    <string name="day_of_week">Day of Week</string>
+    <string name="repeat_mode">Repeat Mode</string>
+    <string name="weekly">WEEKLY</string>
+    <string name="daily">DAILY</string>
+    <string name="schedule_created">Schedule created</string>
+    <string name="error_schedule_name_empty">The schedule name cannot be empty</string>
 </resources>

@@ -7,23 +7,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.aspirephile.petfeeder.R;
-import com.aspirephile.petfeeder.android.schedule.ScheduleContent.Item;
+import com.aspirephile.petfeeder.android.R;
+import com.aspirephile.petfeeder.android.schedule.Schedule.RowItem;
 import com.aspirephile.petfeeder.android.schedule.ScheduleListFragment.OnListFragmentInteractionListener;
 
 import java.util.List;
 
 /**
- * {@link RecyclerView.Adapter} that can display a {@link Item} and makes a call to the
+ * {@link RecyclerView.Adapter} that can display a {@link RowItem} and makes a call to the
  * specified {@link OnListFragmentInteractionListener}.
  * TODO: Replace the implementation with code for your data type.
  */
-public class ScheduleRecyclerViewAdapter extends RecyclerView.Adapter<ScheduleRecyclerViewAdapter.ViewHolder> {
+class ScheduleRecyclerViewAdapter extends RecyclerView.Adapter<ScheduleRecyclerViewAdapter.ViewHolder> {
 
-    private final List<Item> mValues;
+    private final List<RowItem> mValues;
     private final OnListFragmentInteractionListener mListener;
 
-    public ScheduleRecyclerViewAdapter(List<Item> items, OnListFragmentInteractionListener listener) {
+    ScheduleRecyclerViewAdapter(List<RowItem> items, OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -37,7 +37,7 @@ public class ScheduleRecyclerViewAdapter extends RecyclerView.Adapter<ScheduleRe
 
     @Override
     public void onBindViewHolder(final ScheduleRecyclerViewAdapter.ViewHolder holder, int position) {
-        Item item = mValues.get(position);
+        RowItem item = mValues.get(position);
         holder.mItem = item;
         holder.timestampView.setText(item.timestamp);
         holder.titleView.setText(item.title);
@@ -67,12 +67,12 @@ public class ScheduleRecyclerViewAdapter extends RecyclerView.Adapter<ScheduleRe
         return mValues.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        public final View mView;
-        public final TextView timestampView, titleView, quantityView, repeatModeView;
-        public Item mItem;
+    class ViewHolder extends RecyclerView.ViewHolder {
+        final View mView;
+        final TextView timestampView, titleView, quantityView, repeatModeView;
+        RowItem mItem;
 
-        public ViewHolder(View view) {
+        ViewHolder(View view) {
             super(view);
             mView = view;
             timestampView = (TextView) view.findViewById(R.id.timestamp);

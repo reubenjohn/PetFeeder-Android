@@ -11,8 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.aspirephile.petfeeder.R;
-import com.aspirephile.petfeeder.android.record.RecordContent.Item;
+import com.aspirephile.petfeeder.android.R;
+import com.aspirephile.petfeeder.android.record.Record.Item;
 
 /**
  * A fragment representing a list of Items.
@@ -24,12 +24,11 @@ public class RecordListFragment extends Fragment implements SwipeRefreshLayout.O
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
+    RecyclerView recyclerView;
+    SwipeRefreshLayout refreshView;
     // TODO: Customize parameters
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
-
-    RecyclerView recyclerView;
-    SwipeRefreshLayout refreshView;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -96,9 +95,9 @@ public class RecordListFragment extends Fragment implements SwipeRefreshLayout.O
 
     @Override
     public void onRefresh() {
-        RecordContent.fetchRecords();
+        Record.fetchRecords();
         recyclerView.setAdapter(new RecordRecyclerViewAdapter(
-                RecordContent.ITEMS, mListener));
+                Record.ITEMS, mListener));
         refreshView.setRefreshing(false);
     }
 

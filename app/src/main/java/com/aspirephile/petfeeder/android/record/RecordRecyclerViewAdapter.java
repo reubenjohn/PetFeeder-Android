@@ -7,9 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.aspirephile.petfeeder.R;
+import com.aspirephile.petfeeder.android.R;
+import com.aspirephile.petfeeder.android.record.Record.Item;
 import com.aspirephile.petfeeder.android.record.RecordListFragment.OnListFragmentInteractionListener;
-import com.aspirephile.petfeeder.android.record.RecordContent.Item;
 
 import java.util.List;
 

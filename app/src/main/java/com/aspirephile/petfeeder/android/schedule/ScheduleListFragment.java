@@ -11,7 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.aspirephile.petfeeder.R;
+import com.aspirephile.petfeeder.android.R;
 
 /**
  * A fragment representing a list of Items.
@@ -95,7 +95,7 @@ public class ScheduleListFragment extends Fragment implements SwipeRefreshLayout
     @Override
     public void onRefresh() {
         recyclerView.setAdapter(new ScheduleRecyclerViewAdapter(
-                ScheduleContent.fetchSchedules(), mListener));
+                Schedule.fetchSchedules(), mListener));
         refreshView.setRefreshing(false);
     }
 
@@ -111,6 +111,6 @@ public class ScheduleListFragment extends Fragment implements SwipeRefreshLayout
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(ScheduleContent.Item item);
+        void onListFragmentInteraction(Schedule.RowItem item);
     }
 }

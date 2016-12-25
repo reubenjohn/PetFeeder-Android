@@ -3,6 +3,7 @@ package com.aspirephile.petfeeder.android;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -17,11 +18,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.aspirephile.petfeeder.R;
 import com.aspirephile.petfeeder.android.feeder.FeederFragment;
-import com.aspirephile.petfeeder.android.record.RecordContent;
+import com.aspirephile.petfeeder.android.record.Record;
 import com.aspirephile.petfeeder.android.record.RecordListFragment;
-import com.aspirephile.petfeeder.android.schedule.ScheduleContent;
+import com.aspirephile.petfeeder.android.schedule.Schedule;
 import com.aspirephile.petfeeder.android.schedule.ScheduleListFragment;
 
 public class HomeActivity extends AppCompatActivity implements FeederFragment.OnFragmentInteractionListener, RecordListFragment.OnListFragmentInteractionListener, ScheduleListFragment.OnListFragmentInteractionListener {
@@ -40,6 +40,7 @@ public class HomeActivity extends AppCompatActivity implements FeederFragment.On
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
+    private FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +57,44 @@ public class HomeActivity extends AppCompatActivity implements FeederFragment.On
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
         mViewPager.setCurrentItem(1);
+
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+        if (savedInstanceState == null)
+            fab.hide();
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, ScheduleCreatorActivity.class);
+                startActivity(i);
+            }
+        });
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            boolean showFAB;
+
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                showFAB = position == 2;
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+                switch (state) {
+                    case ViewPager.SCROLL_STATE_IDLE:
+                        if (showFAB)
+                            fab.show();
+                        break;
+                    case ViewPager.SCROLL_STATE_DRAGGING:
+                    case ViewPager.SCROLL_STATE_SETTLING:
+                        fab.hide();
+                        break;
+                }
+            }
+        });
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
@@ -92,12 +131,12 @@ public class HomeActivity extends AppCompatActivity implements FeederFragment.On
     }
 
     @Override
-    public void onListFragmentInteraction(RecordContent.Item item) {
+    public void onListFragmentInteraction(Record.Item item) {
 
     }
 
     @Override
-    public void onListFragmentInteraction(ScheduleContent.Item item) {
+    public void onListFragmentInteraction(Schedule.RowItem item) {
 
     }
 
@@ -142,7 +181,7 @@ public class HomeActivity extends AppCompatActivity implements FeederFragment.On
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        public SectionsPagerAdapter(FragmentManager fm) {
+        SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 

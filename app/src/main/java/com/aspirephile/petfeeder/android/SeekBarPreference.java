@@ -7,8 +7,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.SeekBar;
 
-import com.aspirephile.petfeeder.R;
-
 public class SeekBarPreference extends Preference implements SeekBar.OnSeekBarChangeListener {
     private SeekBar mSeekBar;
     private int mProgress;

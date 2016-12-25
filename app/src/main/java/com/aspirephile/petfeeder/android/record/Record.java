@@ -1,5 +1,7 @@
 package com.aspirephile.petfeeder.android.record;
 
+import android.text.format.DateFormat;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -10,13 +12,13 @@ import java.util.Random;
  * <p>
  * TODO: Replace all uses of this class before publishing your app.
  */
-public class RecordContent {
+public class Record {
     /**
      * An array of sample (dummy) items.
      */
     public static final List<Item> ITEMS = new ArrayList<Item>();
     private static final int COUNT = 25;
-    static Random random = new Random();
+    private static Random random = new Random();
     private static android.text.format.DateFormat dateFormat = new android.text.format.DateFormat();
 
     static public List<Item> fetchRecords() {
@@ -34,7 +36,7 @@ public class RecordContent {
 
     private static Item createDummyItem(int position, boolean status) {
         return new Item(String.valueOf(position),
-                dateFormat.format("dd/MM/yyyy hh:mm a", System.currentTimeMillis()).toString(),
+                DateFormat.format("dd/MM/yyyy hh:mm a", System.currentTimeMillis()).toString(),
                 String.valueOf(random.nextInt(12)) + " servings",
                 status ? "PENDING" : "COMPLETED");
     }

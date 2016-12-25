@@ -20,8 +20,6 @@ import android.support.v7.app.ActionBar;
 import android.text.TextUtils;
 import android.view.MenuItem;
 
-import com.aspirephile.petfeeder.R;
-
 /**
  * A {@link PreferenceActivity} that presents a set of application settings. On
  * handset devices, settings are presented as a single list. On tablets,
@@ -107,7 +105,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
     /**
      * Binds a preference's summary to its value. More specifically, when the
      * preference's value is changed, its summary (line of text below the
-     * preference title) is updated to reflect the value. The summary is also
+     * preference name) is updated to reflect the value. The summary is also
      * immediately updated upon calling this method. The exact display format is
      * dependent on the type of preference.
      *
@@ -125,7 +123,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
     /**
      * Binds a preference's summary to its value. More specifically, when the
      * preference's value is changed, its summary (line of text below the
-     * preference title) is updated to reflect the value. The summary is also
+     * preference name) is updated to reflect the value. The summary is also
      * immediately updated upon calling this method. The exact display format is
      * dependent on the type of preference.
      *

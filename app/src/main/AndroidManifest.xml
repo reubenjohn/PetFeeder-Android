@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.aspirephile.petfeeder">
+    package="com.aspirephile.petfeeder.android">
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.aspirephile.petfeeder.android.HomeActivity"
+            android:name=".HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -19,13 +20,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.aspirephile.petfeeder.android.SettingsActivity"
+            android:name=".SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName="com.aspirephile.petfeeder.android.HomeActivity">
+            android:parentActivityName=".HomeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.aspirephile.petfeeder.android.HomeActivity" />
         </activity>
+        <activity
+            android:name=".ScheduleCreatorActivity"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
