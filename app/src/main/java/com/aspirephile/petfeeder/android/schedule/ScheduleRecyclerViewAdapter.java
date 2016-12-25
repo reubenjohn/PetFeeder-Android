@@ -8,9 +8,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.aspirephile.petfeeder.android.R;
+import com.aspirephile.petfeeder.android.schedule.Schedule.Content;
 import com.aspirephile.petfeeder.android.schedule.Schedule.RowItem;
 import com.aspirephile.petfeeder.android.schedule.ScheduleListFragment.OnListFragmentInteractionListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,8 +25,11 @@ class ScheduleRecyclerViewAdapter extends RecyclerView.Adapter<ScheduleRecyclerV
     private final List<RowItem> mValues;
     private final OnListFragmentInteractionListener mListener;
 
-    ScheduleRecyclerViewAdapter(List<RowItem> items, OnListFragmentInteractionListener listener) {
-        mValues = items;
+    ScheduleRecyclerViewAdapter(List<Content> items, OnListFragmentInteractionListener listener) {
+        mValues = new ArrayList<>();
+        for (Content item : items) {
+            mValues.add(new RowItem(item));
+        }
         mListener = listener;
     }
 
@@ -45,7 +50,7 @@ class ScheduleRecyclerViewAdapter extends RecyclerView.Adapter<ScheduleRecyclerV
 
         holder.repeatModeView.setText(item.repeatMode);
         if (item.repeatMode.equals("DAILY")) {
-            holder.repeatModeView.setBackgroundColor(Color.LTGRAY );
+            holder.repeatModeView.setBackgroundColor(Color.LTGRAY);
         } else if (item.repeatMode.equals("WEEKLY")) {
             holder.repeatModeView.setBackgroundColor(Color.DKGRAY);
         }

@@ -1,6 +1,8 @@
 package com.aspirephile.petfeeder.android.schedule;
 
 import android.content.Context;
+import android.database.Cursor;
+import android.database.SQLException;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -10,8 +12,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.aspirephile.petfeeder.android.R;
+import com.aspirephile.petfeeder.android.db.Db;
+import com.aspirephile.petfeeder.android.db.async.OnQueryCompleteListener;
+
+import java.util.List;
 
 /**
  * A fragment representing a list of Items.
@@ -94,8 +101,22 @@ public class ScheduleListFragment extends Fragment implements SwipeRefreshLayout
 
     @Override
     public void onRefresh() {
-        recyclerView.setAdapter(new ScheduleRecyclerViewAdapter(
-                Schedule.fetchSchedules(), mListener));
+        Db.getScheduleManager().getListQuery()
+                .queryInBackground(new OnQueryCompleteListener() {
+                    @Override
+                    public void onQueryComplete(Cursor c, SQLException e) {
+                        if (e != null) {
+                            e.printStackTrace();
+                            Toast.makeText(getActivity(), e.getLocalizedMessage(), Toast.LENGTH_LONG)
+                                    .show();
+                            return;
+                        }
+
+                        List<Schedule.Content> list = Db.getScheduleManager().getListFromResult(c);
+                        recyclerView.setAdapter(new ScheduleRecyclerViewAdapter(
+                                list, mListener));
+                    }
+                });
         refreshView.setRefreshing(false);
     }
 

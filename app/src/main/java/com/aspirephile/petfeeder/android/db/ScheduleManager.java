@@ -34,7 +34,7 @@ public class ScheduleManager extends TableManager {
 
     }
 
-    public QueryStatement getServicesListQuery() {
+    public QueryStatement getListQuery() {
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
         qb.setTables(TABLE_NAME);
         String query = qb.buildQuery(new String[]{
@@ -59,6 +59,7 @@ public class ScheduleManager extends TableManager {
                 schedule._id = c.getInt(0);
                 schedule.name = c.getString(1);
                 int quantity = c.getInt(2);
+                schedule.setQuantity(quantity);
                 long calendar = c.getLong(3);
                 schedule.setEncodedCalendar(calendar);
                 list.add(schedule);
