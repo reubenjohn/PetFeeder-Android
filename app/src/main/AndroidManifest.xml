@@ -9,7 +9,7 @@
         android:name="com.aspirephile.pedifeed.android.App"
         android:allowBackup="true"
         android:fullBackupContent="@xml/full_backup_content"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
