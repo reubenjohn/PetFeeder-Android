@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Pet Feeder</string>
+    <string name="app_name">PediFeed</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -19,7 +19,7 @@
     <string name="record_timestamp_sample">8:32PM 21/12/2016</string>
     <string name="arduino_status">Arduino status</string>
     <string name="arduino_status_sample">CONNECTED</string>
-    <string name="record_title_sample">Lunch</string>
+    <string name="schedule_title_sample">Lunch</string>
     <string name="repeat_mode_sample">DAILY</string>
     <string name="title_activity_settings">Settings</string>
 
@@ -96,7 +96,7 @@
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="vibration_intensity_title">Vibration intensity</string>
     <string name="vibration_intensity_summary">The intensity of vibration during feeding for smooth flow of food</string>
-    <string name="max_penging_schedules">Maximum number of pending schedules</string>
+    <string name="max_pending_schedules">Maximum number of pending schedules</string>
     <string name="feeding_time">Feeding time</string>
     <string name="title">Title</string>
     <string name="title_hint">Schedule name</string>
@@ -107,4 +107,55 @@
     <string name="daily">DAILY</string>
     <string name="schedule_created">Schedule created</string>
     <string name="error_schedule_name_empty">The schedule name cannot be empty</string>
+
+    <!-- Blue Term -->
+    <string name="alert_dialog_no_bt">Cannot connect to your bluetooth enabled feeder without bluetooth.</string>
+    <string name="alert_dialog_yes">Yes</string>
+    <string name="alert_dialog_no">NO</string>
+    <string name="alert_dialog_warning_title">Warning</string>
+    <string name="alert_dialog_ok">OK</string>
+    <string name="alert_dialog_turn_on_bt">This application needs the Bluetooth. Do you want turn on?</string>
+
+    <string name="toast_connected_to">Connected to</string>
+    <string name="toast_unable_to_connect">Unable to connect device</string>
+    <string name="toast_connection_lost">Device connection was lost</string>
+
+    <string name="not_connected">You are not connected to a device</string>
+    <string name="title_connecting">Connecting…</string>
+    <string name="title_connected_to">Connected: </string>
+    <string name="title_not_connected">not connected</string>
+
+    <!--  DeviceListActivity -->
+    <string name="scanning">Scanning for devices…</string>
+    <string name="select_device">Select a device to connect</string>
+    <string name="none_paired">No devices have been paired</string>
+    <string name="none_found">No devices found</string>
+    <string name="title_paired_devices">Paired Devices</string>
+    <string name="title_other_devices">Other Available Devices</string>
+    <string name="button_scan">Scan for devices</string>
+
+    <!-- Options Menu -->
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
+
+    <!-- Don't localize these default values -->
+    <string name="default_value_localecho_preference">false</string>
+    <string name="default_value_allowinsecureconnections_preference">true</string>
+    <string name="default_value_fontsize_preference">10</string>
+    <string name="default_value_color_preference">2</string>
+    <string name="default_value_controlkey_preference">0</string>
+    <string name="default_value_end_of_line_0D_preference">13</string>
+    <string name="default_value_end_of_line_0A_preference">10</string>
+    <string name="default_screenorientation_preference">0</string>
+    <string name="connected">CONNECTED</string>
+    <string name="na">N/A</string>
+    <string name="log">Log</string>
+    <string name="disconnected">DISCONNECTED</string>
+    <string name="max_servings">Maximum servings</string>
+    <string name="feed_quantity_sample">2 servings</string>
+    <string name="sync">Sync</string>
+    <string name="syncing">Syncing</string>
+    <string name="max_records">Maximum records to sync</string>
+    <string name="sync_latency">Sync latency</string>
+
 </resources>

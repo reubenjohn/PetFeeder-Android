@@ -1,13 +1,23 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <com.aspirephile.petfeeder.android.SeekBarPreference
+    <com.aspirephile.pedifeed.android.SeekBarPreference
         android:defaultValue="-1"
         android:key="pref_vibration_intensity"
         android:title="@string/vibration_intensity_title" />
 
-    <com.aspirephile.petfeeder.android.SeekBarPreference
+    <com.aspirephile.pedifeed.android.SeekBarPreference
         android:defaultValue="-1"
         android:key="pref_max_pending_schedules"
-        android:title="@string/max_penging_schedules" />
+        android:title="@string/max_pending_schedules" />
+
+    <com.aspirephile.pedifeed.android.SeekBarPreference
+        android:defaultValue="10"
+        android:key="pref_max_servings"
+        android:title="@string/max_servings" />
+
+    <com.aspirephile.pedifeed.android.SeekBarPreference
+        android:defaultValue="500"
+        android:key="pref_sync_latency"
+        android:title="@string/sync_latency" />
 
 </PreferenceScreen>

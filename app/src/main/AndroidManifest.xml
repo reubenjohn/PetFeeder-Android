@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.aspirephile.petfeeder.android">
+    package="com.aspirephile.pedifeed.android">
+
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
 
     <application
-        android:name=".App"
+        android:name="com.aspirephile.pedifeed.android.App"
         android:allowBackup="true"
+        android:fullBackupContent="@xml/full_backup_content"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".HomeActivity"
+            android:name="com.aspirephile.pedifeed.android.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -20,16 +24,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SettingsActivity"
+            android:name="com.aspirephile.pedifeed.android.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".HomeActivity">
+            android:parentActivityName="com.aspirephile.pedifeed.android.HomeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.aspirephile.petfeeder.android.HomeActivity" />
+                android:value="com.aspirephile.pedifeed.android.HomeActivity" />
         </activity>
         <activity
-            android:name=".ScheduleCreatorActivity"
+            android:name="com.aspirephile.pedifeed.android.ScheduleCreatorActivity"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.aspirephile.pedifeed.android.connection.DeviceListActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/select_device"
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
     </application>
 
 </manifest>
