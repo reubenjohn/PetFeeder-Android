@@ -23,3 +23,7 @@ Build it yourself
 ---
 Build any contraption, connect it to your Arduino, hook-up a Bluetooth module and that's it. Just make sure you follow the App Interface so the Arduino and the app speak the same language.
 We'll soon be putting up the Arduino code to bump up progress with your contraption.
+
+Screenshots
+---
+![](https://sites.google.com/site/aspirephile/_/rsrc/1483046440749/products-services/pedifeed/Screenshot_2016-12-29-22-21-06.png?height=400&width=225)    ![](https://sites.google.com/site/aspirephile/_/rsrc/1483046431000/products-services/pedifeed/Screenshot_2016-12-29-22-15-51.png?height=400&width=225)    ![](https://sites.google.com/site/aspirephile/_/rsrc/1483046436717/products-services/pedifeed/Screenshot_2016-12-29-22-16-09.png?height=400&width=225)    ![](https://sites.google.com/site/aspirephile/_/rsrc/1483046444279/products-services/pedifeed/Screenshot_2016-12-29-22-21-25.png?height=400&width=225)
